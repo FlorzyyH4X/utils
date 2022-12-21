@@ -20,6 +20,10 @@ function Utilities:SetDeathReason(Reason)
         Data.DeathReason.Value = Reason
     end
 end
+		
+function Utilities:Caption(Text)
+    firesignal(ReplicatedStorage.Bricks.Caption.OnClientEvent, Text)		
+end
 
 function Utilities:Kill()
     Players.LocalPlayer.Character.Humanoid.Health = 0
