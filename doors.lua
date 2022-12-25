@@ -30,7 +30,7 @@ function Utilities:BreakLights()
 end
 		
 function Utilities:FlickerLights(Seconds)
-    firesignal(ReplicatedStorage.Bricks.UseEventModule.OnClientEvent, "flickerLights", Players.LocalPlayer:GetAttribute("CurrentRoom"), Seconds)	
+    firesignal(ReplicatedStorage.Bricks.UseEventModule.OnClientEvent, "flickerLights", Workspace.CurrentRooms[Players.LocalPlayer:GetAttribute("CurrentRoom")], Seconds)	
 end
 
 function Utilities:Kill()
