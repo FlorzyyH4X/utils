@@ -24,6 +24,14 @@ end
 function Utilities:Caption(Text)
     firesignal(ReplicatedStorage.Bricks.Caption.OnClientEvent, Text)		
 end
+		
+function Utilities:BreakLights()
+    firesignal(ReplicatedStorage.Bricks.UseEventModule.OnClientEvent, "breakLights", Workspace.CurrentRooms[Players.LocalPlayer:GetAttribute("CurrentRoom")], 0.416, 60)	
+end
+		
+function Utilities:FlickerLights(Seconds)
+    firesignal(ReplicatedStorage.Bricks.UseEventModule.OnClientEvent, "flickerLights", Players.LocalPlayer:GetAttribute("CurrentRoom"), Seconds)	
+end
 
 function Utilities:Kill()
     Players.LocalPlayer.Character.Humanoid.Health = 0
